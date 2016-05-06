@@ -37,8 +37,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(browser);
                 break;
             case R.id.button2:
-                Intent dialer = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:"));
-                startActivity(dialer);
+                Intent dialer = new Intent(Intent.ACTION_CALL,Uri.parse("tel:01713365925"));
+                try{
+                    startActivity(dialer);
+                }
+                catch(SecurityException e){
+
+                };
+
                 break;
             case R.id.button3:
                 Intent camera = new Intent("android.media.action.IMAGE_CAPTURE");
